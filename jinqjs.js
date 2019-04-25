@@ -1078,7 +1078,7 @@ var jinqJs = function (settings) {
             if (groups.length === 0) {
                 sum = 0;
                 for (var index = 0; index < result.length; index++)
-                    sum += (arguments.length === 0 ? result[index] : result[index][arguments[0]]);
+                    sum += (arguments.length === 0 ? parseInt(result[index]) : parseInt(result[index][arguments[0]]));
 
                 result = [sum];
             }
@@ -1089,7 +1089,7 @@ var jinqJs = function (settings) {
                     if (!hasProperty(sum, key))
                         sum[key] = 0;
 
-                    return sum[key] += rValue;
+                    return sum[key] += parseInt(rValue);
                 });
             }
 
